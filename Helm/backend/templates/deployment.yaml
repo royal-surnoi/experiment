@@ -21,6 +21,7 @@ spec:
         name: backend
         project: fusioniq
         tier: app
+        env: {{ .Values.deployment.environment }}
     spec:
       containers:
       - name: backend

@@ -120,6 +120,7 @@ spec:
         name: web
         project: fusioniq
         tier: web
+        env: {{ .Values.deployment.environment }}
     spec:
       containers:
       - name: web
