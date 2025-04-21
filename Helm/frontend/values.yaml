@@ -1,0 +1,19 @@
+deployment:
+  replicas: 1
+  environment: blue
+image:
+  repository: iamroyalreddy/fusion-fe
+  tag: latest
+hpa:
+  averageUtilization: 70
+ingress:
+  name: fusioniq # Changed from 'web' to match Ingress metadata.name
+  scheme: internet-facing
+  targetType: ip
+  tags: Environment=prod,Team=test,Project=fusioniq
+  group: fusioniq
+  host: royalreddy.site
+  subnets:
+    - subnet-02742af4dfb9984e0
+    - subnet-0f6131ee98181a598
+releaseVersion: realise-v1.0.0

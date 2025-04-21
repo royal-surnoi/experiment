@@ -1,0 +1,9 @@
+deployment:
+  replicas: 1
+image:
+  repository: iamroyalreddy/fusion-fe
+  tag: latest # this will be override by Jenkins
+hpa:
+  averageUtilization: 70
+
+releaseVersion: realise-v1.0.0

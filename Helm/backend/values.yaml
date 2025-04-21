@@ -1,0 +1,13 @@
+deployment:
+  replicas: 1
+  environment: blue
+image:
+  repository: iamroyalreddy/fusion-backend
+  tag: latest # this will be override by Jenkins
+hpa:
+  averageUtilization: 70
+db:
+  url: jdbc:mysql://prod.db.fusioniq.com:3306/prod?createDatabaseIfNotExist=true
+  username: YWRtaW4=
+  password: byo2bFlCWFo+fE9pT2pwak5pIzRbQ0NNI0tBVA==
+releaseVersion: release-v1.0.0
