@@ -137,7 +137,7 @@ pipeline{
             }
         }
 
-        stage('Switch Traffic') {
+        stage('Deployment-test') {
             when {
                 expression { return params.SWITCH_TRAFFIC }
             }
@@ -150,7 +150,8 @@ pipeline{
                     """
                 }
             }        
-
+        }
+        
         stage('Rollback') {
             when {
                 expression { params.OPERATION == 'Rollback' }
