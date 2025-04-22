@@ -2,22 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-  namespace: fusioniq 
+  namespace: fusioniq
   labels:
     name: backend
     project: fusioniq
-    tier: app 
+    tier: app
 spec:
   replicas: {{ .Values.deployment.replicas }}
   selector:
-    matchLabels: 
+    matchLabels:
       name: backend
       project: fusioniq
       tier: app
       env: {{ .Values.deployment.environment }}
-  template: 
+  template:
     metadata:
-      labels: 
+      labels:
         name: backend
         project: fusioniq
         tier: app
@@ -35,7 +35,7 @@ spec:
             cpu: "300m"
             memory: "512Mi"
         env:
-        - name: SPRING_DATASOURCE_URL  # Fixed Name
+        - name: SPRING_DATASOURCE_URL
           valueFrom:
             configMapKeyRef:
               name: backend
@@ -43,10 +43,10 @@ spec:
         - name: SPRING_DATASOURCE_USERNAME
           valueFrom:
             secretKeyRef:
-              name: backend
+              name: backend-{{ .Values.deployment.environment }}  # Reference environment-specific Secret
               key: SPRING_DATASOURCE_USERNAME
         - name: SPRING_DATASOURCE_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: backend
+              name: backend-{{ .Values.deployment.environment }}  # Reference environment-specific Secret
               key: SPRING_DATASOURCE_PASSWORD
