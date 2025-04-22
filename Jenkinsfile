@@ -83,7 +83,7 @@ pipeline{
                     }
 
                     def envTag = params.DEPLOYMENT_ENVIRONMENT.toLowerCase()
-                    withKubeConfig(caCertificate: '', clusterName: 'fusioniq-prod', contextName: '', credentialsId: 'k8-token', namespace: 'fusioniq', restrictKubeConfigAccess: false, serverUrl: 'https://44D0FD72E323A3370331545CAB8A3B2B.gr7.us-east-1.eks.amazonaws.com') {
+                    withKubeConfig(caCertificate: '', clusterName: 'fusioniq-prod', contextName: '', credentialsId: 'k8-token', namespace: 'fusioniq', restrictKubeConfigAccess: false, serverUrl: 'https://a12b999722daed2d86a3bd3b2e227f82.gr7.us-east-1.eks.amazonaws.com') {
                     // Deploy backend
                     sh """
                         sed -i "s/^appVersion: .*/appVersion: ${APP_VERSION}/" ./Helm/backend/Chart.yaml
