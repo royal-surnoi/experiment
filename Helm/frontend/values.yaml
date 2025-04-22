@@ -10,7 +10,7 @@ ingress:
   name: fusioniq # Changed from 'web' to match Ingress metadata.name
   scheme: internet-facing
   targetType: ip
-  tags: Environment=prod,Team=test,Project=fusioniq
+  tags: Environment=prod,Project=fusioniq,environment=blue
   group: fusioniq
   host: royalreddy.site
   subnets:
