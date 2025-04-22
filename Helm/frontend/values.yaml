@@ -14,6 +14,6 @@ ingress:
   group: fusioniq
   host: royalreddy.site
   subnets:
-    - subnet-0e016de018edc0d41
-    - subnet-0f6a5a04ee8ae931d
+    - subnet-0b448e9d8091297f7
+    - subnet-05942f1ed2a384334
 releaseVersion: realise-v1.0.0
