@@ -9,5 +9,5 @@ hpa:
 db:
   url: jdbc:mysql://prod.db.fusioniq.com:3306/prod?createDatabaseIfNotExist=true
   username: YWRtaW4=
-  password: VVtPc1ZfNTA1OG9bNFZMcFZ3V1QhXWtVY3ZxVQ==
+  password: SWtWLVI+eXV3PzxHWWlCVWY1KXc6S0NJZmNERQ==
 releaseVersion: release-v1.0.0
