@@ -116,7 +116,7 @@ pipeline{
                 script {
                     def envTag = params.DEPLOYMENT_ENVIRONMENT.toLowerCase()
                     echo "Switching traffic to ${envTag}"
-                    withKubeConfig(caCertificate: '', clusterName: 'fusioniq-prod', contextName: '', credentialsId: 'k8-token', namespace: 'fusioniq', restrictKubeConfigAccess: false, serverUrl: 'https://6ca4aab3d35ce1273f4a110793eaf5f3.gr7.us-east-1.eks.amazonaws.com') {
+                    withKubeConfig(caCertificate: '', clusterName: 'fusioniq-prod', contextName: '', credentialsId: 'k8-token', namespace: 'fusioniq', restrictKubeConfigAccess: false, serverUrl: 'https://d0dbde6088e5eda9db7e0ce79cfcf11c.sk1.us-east-1.eks.amazonaws.com/') {
                     // Switch service selector to new deployment
                     sh """
                         kubectl patch svc frontend-service -n fusioniq -p '{
