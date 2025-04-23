@@ -8,7 +8,7 @@ metadata:
     project: fusioniq
     tier: app
 spec:
-  replicas: {{ .Values.deployment.environment }}
+  replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
       name: backend

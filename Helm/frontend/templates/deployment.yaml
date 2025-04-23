@@ -107,7 +107,7 @@ metadata:
     project: fusioniq
     tier: web 
 spec:
-  replicas: {{ .Values.deployment.environment }}
+  replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels: # should match with pod
       name: web-{{ .Values.deployment.environment }}
