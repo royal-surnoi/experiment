@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-{{ .Values.deployment.replicas }}
+  name: backend-{{ .Values.deployment.environment }}
   namespace: fusioniq
   labels:
     name: backend
     project: fusioniq
     tier: app
 spec:
-  replicas: {{ .Values.deployment.replicas }}
+  replicas: {{ .Values.deployment.environment }}
   selector:
     matchLabels:
       name: backend
@@ -38,7 +38,7 @@ spec:
         - name: SPRING_DATASOURCE_URL
           valueFrom:
             configMapKeyRef:
-              name: backend-{{ .Values.deployment.replicas }}
+              name: backend-{{ .Values.deployment.environment }}
               key: SPRING_DATASOURCE_URL
         - name: SPRING_DATASOURCE_USERNAME
           valueFrom:

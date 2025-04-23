@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: fusioniq-{{ .Values.deployment.replicas }}
+  name: fusioniq-{{ .Values.deployment.environment }}
   namespace: fusioniq
   annotations:
     alb.ingress.kubernetes.io/scheme: {{ .Values.ingress.scheme }}
@@ -19,6 +19,6 @@ spec:
         path: "/"
         backend:
           service:
-            name: web-{{ .Values.deployment.replicas }}
+            name: web-{{ .Values.deployment.environment }}
             port:
               number: 80

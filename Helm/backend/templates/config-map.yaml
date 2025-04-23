@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: backend-{{ .Values.deployment.replicas }}
+  name: backend-{{ .Values.deployment.environment }}
   namespace: fusioniq
 data:
   SPRING_DATASOURCE_URL: {{ .Values.db.url }}

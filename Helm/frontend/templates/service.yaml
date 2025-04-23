@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-{{ .Values.deployment.replicas }}
+  name: web-{{ .Values.deployment.environment }}
   namespace: fusioniq
 spec:
   selector:
-    name: web-{{ .Values.deployment.replicas }}
+    name: web-{{ .Values.deployment.environment }}
     project: fusioniq
     tier: web 
   ports:
